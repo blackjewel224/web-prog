@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        #background-video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        #dropdown-menu {
+    cursor: pointer;
+    display: inline-block;
+    height: 100px;
+    padding-top: 20px;
+    line-height: 50px;
+    vertical-align: middle;
+    padding-left: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+#dropdown-menu a {
+    color: #fff; 
+    text-decoration: none;
+}
+.dropdown-content {
+    cursor: pointer;
+    display: none;
+    background: #0b7db5;
+    position: relative;
+    min-width: 160px;
+    border-radius: 30px;
+    z-index: 1;
+    left: 0;
+    font-weight: normal;
+    font-size: medium;
+    text-decoration: none;
+}
+#dropdown-menu li {
+
+    text-align: left;
+    padding-left: 30px;
+    list-style-type: none;
+    color: white;
+    font-size: 25px;
+}
+
+#dropdown-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#dropdown-menu:hover .dropdown-content {
+    display: block;
+    text-emphasis: none;
+    text-decoration: none;
+}
+
+#dropdown-menu li:hover {
+    background: #120343;
+    border-radius: 25px;
+}
+h1 {
+    color:#120343;
+    -webkit-text-stroke: 0.5px blue;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    font-size: 50px;
+    bottom: 145px;
+    padding: 0;
+    margin-left: 180px;
+    padding-right: 5cm;
+}
+.gallery {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+}
+
+.image-container{
+display: inline;
+}
+.gallery .my-image {
+    
+    object-fit:cover;
+    object-position: right;
+    width:300px;
+    height:300px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 50px;
+}
+
+
+.my-image:hover  {
+    transform: scale(1.2);
+    transform-origin: center center;
+    text-align: center;  
+} 
+
+.my-big-image{
+    z-index: 5;
+    width:70%;
+    position: absolute;
+    left: 15%;
+    top: 0%;
+    display: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+
+.my-image:focus + #my-big-image1,
+.my-image:focus + #my-big-image2,
+.my-image:focus + #my-big-image3{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <div id="topNav">
+            <div class="row" id="header">
+                <div id="dropdown-menu">
+                    <a href="index.html"><span style="color: #120343; -webkit-text-stroke: 0.05mm #063950;">Main Page</span></a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href="MYCV.html">
+                                <li> <i style="padding-right: 5px;"></i>CV</li>
+                            </a>
+                            <a href="contact.html">
+                                <li><i style="padding-right: 5px;"></i>Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <video id="background-video" autoplay loop muted >
+        <source src="backgroundvid.mp4" type="video/mp4">
+    </video>
+    <h1>Gallery Page</h1>
+    <div class="image-container">
+        <img src="pic2.JPG" class="my-image" tabindex="0"  style="
+        object-fit:cover;
+    width:500px;
+    height:500px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 50px;
+    position: relative;
+    left: 13cm;
+    bottom: 3cm;
+            ">
+        <img src="pic2.JPG" class="my-big-image" id="my-big-image1">
+    </div>
+    <div id="content" style="padding-left: 74px; padding-right: 74px; margin-top:200px">
+
+
+        <section id="gallery">
+            
+            <div class="gallery" style="text-align: center; position: relative; bottom: 8cm;">
+
+               <div class="image-container">
+                    <img src="pic1.JPG" class="my-image" tabindex="0" >
+                    <img src="pic1.JPG" class="my-big-image" id="my-big-image1">
+                </div>
+
+                <div class="image-container">
+                    <img src="pic3.jpg" class="my-image" tabindex="0">
+                    <img src="pic3.jpg" class="my-big-image" id="my-big-image2">
+                </div>
+
+                <div class="image-container">
+                    <img src="pic4.JPG" class="my-image" tabindex="0">
+                    <img src="pic4.JPG" class="my-big-image" id="my-big-image3">
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
